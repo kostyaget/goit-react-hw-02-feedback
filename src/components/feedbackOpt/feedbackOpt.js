@@ -1,6 +1,6 @@
 import s from "./feedbackOpt.module.css"
 
-export default function FeedbckOpt({ options, onLeaveFeedback }) {
+export default function FeedbackOpt({ options, onLeaveFeedback }) {
     return (
     <div className="buttons_block">
         {options.map(elem => {
