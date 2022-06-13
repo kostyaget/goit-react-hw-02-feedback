@@ -31,20 +31,23 @@ class App extends Component {
   }
 
   render() {
+    const { good, neutral, bad } = this.state;
+    const options = Object.keys(this.state);
     const total = this.countTotalFeedback();
     const positivePercentage = Math.floor(this.countPositiveFeedbackPercentage());
     const eventHandler = this.onIncrement;
 
     return (
       <Section title="Please leave feedback">
-        <FeedbackOpt options={['good', 'neutral', 'bad']} onLeaveFeedback={eventHandler} />
+        <FeedbackOpt options={options}
+        onLeaveFeedback={eventHandler} />
         {!total ? (
           <Notification title = "There is on Feedback" />
                   ) : (
             <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
+              good={good}
+              neutral={neutral}
+              bad={bad}
               total={total}
               positivePercentage={positivePercentage}
           /> 

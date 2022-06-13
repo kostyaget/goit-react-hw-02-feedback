@@ -1,9 +1,9 @@
 import propTypes from "prop-types";
 import s from "./statistics.module.css";
 
-export default function Statistics({
+const Statistics = ({
     good,neutral,bad,total,positivePercentage,
-}) {
+}) => {
     return (
         <div>
             <h2>Statistics</h2>
@@ -18,9 +18,11 @@ export default function Statistics({
 }
 
 Statistics.prototypes = {
-    good: propTypes.number,
-    neutral: propTypes.number,
-    bad: propTypes.number,
-    otal: propTypes.number,
-    positivePercentage: propTypes.number,
+    good: propTypes.number.isRequired,
+    neutral: propTypes.number.isRequired,
+    bad: propTypes.number.isRequired,
+    otal: propTypes.number.isRequired,
+    positivePercentage: propTypes.number.isRequired,
 };
+
+export default Statistics;
